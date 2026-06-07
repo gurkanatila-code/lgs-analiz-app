@@ -1,0 +1,5 @@
+Plaintext
+libmupdf-dev
+swig
+g++
+gcc
