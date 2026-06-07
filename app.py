@@ -1,5 +1,5 @@
 import streamlit as st
-import fitz  # PyMuPDF
+from pdf2image import convert_from_bytes
 from PIL import Image
 import io
 import json
@@ -14,13 +14,11 @@ st.title("📚 LGS Sınav Kitapçığı Analiz Aracı")
 st.markdown("A ve B kitapçıklarını yükleyin, yapay zeka sizin için cevap anahtarını ve kazanım analizini çıkarsın.")
 
 # Yardımcı Fonksiyonlar
-def extract_images_from_pdf(uploaded_file, dpi=150):
-    """Yüklenen PDF dosyasını yüksek çözünürlüklü görsellere çevirir."""
-    images = []
+def extract_images_from_pdf(uploaded_file):
     pdf_bytes = uploaded_file.read()
-    doc = fitz.open(stream=pdf_bytes, filetype="pdf")
-    zoom = dpi / 72
-    mat = fitz.Matrix(zoom, zoom)
+    # pdf2image kullanarak görsele çevir
+    images = convert_from_bytes(pdf_bytes, dpi=150)
+    return images
     
     for page_num in range(len(doc)):
         page = doc.load_page(page_num)
