@@ -1,8 +1,7 @@
-Plaintext
 streamlit
 pandas
 openpyxl
 python-docx
 Pillow
-pymupdf
+pdf2image
 google-generativeai
