@@ -1,1 +1,4 @@
+build-essential
 poppler-utils
+swig
+python3-dev
