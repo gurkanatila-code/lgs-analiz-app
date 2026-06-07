@@ -1,6 +1,6 @@
 Plaintext
 streamlit
-PyMuPDF
+pymupdf
 google-generativeai
 pandas
 openpyxl
